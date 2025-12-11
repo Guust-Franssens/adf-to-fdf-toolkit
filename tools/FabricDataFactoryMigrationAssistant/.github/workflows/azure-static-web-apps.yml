@@ -35,6 +35,14 @@ jobs:
         run: npm run build
         working-directory: tools/FabricDataFactoryMigrationAssistant
 
+      - task: Bash@3
+        inputs:
+          targetType: 'inline'
+          script: |
+            pwd
+            ls -l
+            ls -l dist/
+
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
